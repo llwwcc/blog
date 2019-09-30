@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+<script>
+	// setTimeout(function(){
+	// 	    console.log('1')
+	// 	});
+ 
+	// 	new Promise(function(resolve){
+	// 	    console.log('2');
+ //               resolve();
+	// 	}).then(function(){
+	// 	    console.log('3')
+	// 	});
+ 
+	// 	console.log('4');
+
+
+		Promise.resolve().then(()=>{
+		  console.log('Promise1')  
+		  setTimeout(()=>{
+		    console.log('setTimeout2')
+		  },0)
+		})
+
+		setTimeout(()=>{
+		  console.log('setTimeout1')
+		  Promise.resolve().then(()=>{
+		    console.log('Promise2')    
+		  })
+		},0)
+
+
+</script>
+</html>
